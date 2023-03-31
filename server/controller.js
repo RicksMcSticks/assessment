@@ -1,3 +1,5 @@
+let fortuneArray = ["I see a baby in your future!", "You will see a man today!", "Someone is watching you!0_0", "I see through the fortune that you will become handsome one day!", "RUN WHEN YOU SEE IT!"];
+
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -11,14 +13,23 @@ module.exports = {
     },
 
     getFortune: (req, res) => {
-        let fortuneArray = ["I see a baby in your future!", "You will see a man today!", "Someone is watching you!0_0", "I see through the fortune that you will become handsome one day!", "RUN WHEN YOU SEE IT!"];
+        res.status(200).send(fortuneArray);
+        
+       
+      
+    },
+    getFortunes: (req, res) => {
+
+        fortunes = ["I see a baby in your future!", "You will see a man today!", "Someone is watching you!0_0", "I see through the fortune that you will become handsome one day!", "RUN WHEN YOU SEE IT!"];
       
         // choose random compliment
-        let randomIndex = Math.floor(Math.random() * fortuneArray.length);
-        let randomfortune = fortuneArray[randomIndex];
+        let randomIndex = Math.floor(Math.random() * fortunes.length);
+        let randomFortune = fortunes[randomIndex];
       
-        res.status(200).send(randomfortune);
-    },
+        res.status(200).send(randomFortune);
+},
+
+    
 
     addFortune: (req, res) => {
         let {name} = req.body
@@ -37,6 +48,5 @@ module.exports = {
 
         res.status(200).send(fortuneArray)
     }
-
-
 }
+
