@@ -11,11 +11,11 @@ module.exports = {
     },
 
     getFortune: (req, res) => {
-        const fortuneArray = ["I see a baby in your future!", "You will see a man today!", "Someone is watching you!0_0", "I see through the fortune that you will become handsome one day!", "RUN WHEN YOU SEE IT!"];
+        let fortuneArray = ["I see a baby in your future!", "You will see a man today!", "Someone is watching you!0_0", "I see through the fortune that you will become handsome one day!", "RUN WHEN YOU SEE IT!"];
       
         // choose random compliment
-        let randomIndex = Math.floor(Math.random() * fortune.length);
-        let randomfortune = fortune[randomIndex];
+        let randomIndex = Math.floor(Math.random() * fortuneArray.length);
+        let randomfortune = fortuneArray[randomIndex];
       
         res.status(200).send(randomfortune);
     },
